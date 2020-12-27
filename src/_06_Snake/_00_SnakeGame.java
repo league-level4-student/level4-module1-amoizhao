@@ -35,8 +35,7 @@ public class _00_SnakeGame implements ActionListener, KeyListener {
 
 	private Timer timer;
 
-	private Location foodLocation ;
-	// = new Location(3,4) worked
+	private Location foodLocation;
 
 	public _00_SnakeGame() {
 		snake = new Snake(new Location(WIDTH / 2, HEIGHT / 2));
@@ -89,13 +88,13 @@ public class _00_SnakeGame implements ActionListener, KeyListener {
 		
 		switch(choice) {
 		case "Expert":
-			timer.setDelay(30);
+			timer.setDelay(250);
 			break;
 		case "Moderate":
-			timer.setDelay(20);
+			timer.setDelay(500);
 			break;
 		case "Beginner":
-			timer.setDelay(10);
+			timer.setDelay(1000);
 			break;
 		}
 		//3. start the timer
@@ -184,7 +183,7 @@ public class _00_SnakeGame implements ActionListener, KeyListener {
 		}
 		//3. if the location of the head is equal to the location of the food,
 		// 	 feed the snake and set the food location
-		if(snake.getHeadLocation() == foodLocation) {
+		if(snake.getHeadLocation().equals(foodLocation)) {
 			snake.feed();
 			setFoodLocation();
 		}
